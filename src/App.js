@@ -1,25 +1,66 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { createBrowserRouter,RouterProvider } from "react-router-dom";
+/** import all compoents */
+import Username from './components/Username';
+import Register from './components/Register';
+import Password from './components/Password';
+import Recovery from './components/Recovery';
+import Profile from './components/Profile';
+import Reset from './components/Reset';
+import Login from "./components/Login";
+import Mtd from "./components/Mtd";
+import PageNotFound from './components/PageNotFound';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+/** Route Resources */
+const router=createBrowserRouter([
+    {
+        path:'/',
+        element:<Login></Login>
+    },
+    {
+        path:'/username',
+        element:<Username></Username>
+    },
+    {
+        path:'/register',
+        element:<Register></Register>
+    }
+    ,
+    {
+        path:'/password',
+        element:<Password></Password>
+    },
+    {
+        path:'/register',
+        element:<Register></Register>
+    },
+    {
+        path:'/recovery',
+        element:<Recovery></Recovery>
+    },
+    {
+        path:'/profile',
+        element:<Profile></Profile>
+    },
+    {
+        path:'/reset',
+        element:<Reset></Reset>
+    },
+    {
+        path:'/mtd',
+        element:<Mtd></Mtd>
+    },
+    {
+        path:"*",
+        element:<Username></Username>
+    }
+])
+
+export default function App() {
+    return (
+        <main>
+            <RouterProvider router={router}></RouterProvider>
+        </main>
+    )
 }
-
-export default App;

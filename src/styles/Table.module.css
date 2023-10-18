@@ -1,0 +1,6 @@
+.table-responsive {
+    max-height:10px;
+}
+
+.react-bootstrap-table table { table-layout: auto; }
+
